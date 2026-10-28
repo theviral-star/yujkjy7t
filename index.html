@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050a12">
+  <title>Yellow on point, brown on chill. 💛🤎 Just a whole vibe, no competition needed. 😮‍💨✨️</title>
+  
+  <script>
+    const PAGE_CONFIG = {
+      photoUrl: "https://cdn.aceimg.com/XT019nRpL.png"
+      videoUrl: "https://cdn.videy.co/KendNevv.mp4"
+    };
+  </script>
+
+  <style>
+    :root {
+      --bg: #050a12;
+      --panel: #0b111b;
+      --blue: #69d9ff;
+      --text: #f5f8ff;
+      --muted: #a6afbf;
+      --line: rgba(255,255,255,.13);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 18px;
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(ellipse at 50% 20%, rgba(24,93,125,.25), transparent 55%),
+        var(--bg);
+    }
+
+    .page { width: 100%; max-width: 900px; margin: auto; }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 44px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+    }
+
+    .brand-icon {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      color: var(--blue);
+      border: 1px solid rgba(105,217,255,.45);
+      border-radius: 12px;
+      background: rgba(105,217,255,.08);
+    }
+
+    .badge {
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      color: #dce4f0;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .7px;
+      white-space: nowrap;
+    }
+
+    .hero { margin: 0 auto 26px; text-align: center; }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--blue);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 3px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 6vw, 50px);
+      line-height: 1.12;
+      font-weight: 900;
+      letter-spacing: -1.7px;
+    }
+
+    h1 span { color: var(--blue); }
+
+    .subtitle {
+      max-width: 540px;
+      margin: 14px auto 0;
+      color: #c0c8d5;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .video-card {
+      max-width: 760px;
+      margin: auto;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: #070a10;
+      box-shadow: 0 25px 70px rgba(0,0,0,.4);
+    }
+
+    .video-stage {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 280px;
+      background: #05070b;
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      height: min(65vh, 610px);
+      min-height: 280px;
+      object-fit: contain;
+      background: #05070b;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(0,0,0,.08), transparent 40%, rgba(0,0,0,.12));
+    }
+
+    .play-button {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 13px;
+      width: 100%;
+      border: 0;
+      color: white;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .play-button[hidden] { display: none; }
+
+    .play-circle {
+      display: grid;
+      place-items: center;
+      width: 76px;
+      height: 76px;
+      padding-left: 4px;
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 50%;
+      color: #041019;
+      background: var(--blue);
+      box-shadow: 0 0 0 8px rgba(105,217,255,.1), 0 0 32px rgba(105,217,255,.3);
+      font-size: 27px;
+      transition: transform .2s ease;
+    }
+
+    .play-button:hover .play-circle { transform: scale(1.07); }
+
+    .play-label {
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px #000;
+    }
+
+    .video-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 15px;
+      border-top: 1px solid rgba(255,255,255,.06);
+      background: var(--panel);
+    }
+
+    .info-title { margin: 0; font-size: 13px; font-weight: 800; }
+
+    .info-status {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .sound-button {
+      flex-shrink: 0;
+      padding: 10px 12px;
+      border: 1px solid rgba(105,217,255,.35);
+      border-radius: 10px;
+      color: var(--blue);
+      background: rgba(105,217,255,.07);
+      font-size: 10px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .bottom { margin: 23px auto 0; text-align: center; }
+    .bottom h2 { margin: 0; font-size: 15px; }
+    .bottom p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .watch-link {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 12px 20px;
+      border: 1px solid rgba(105,217,255,.38);
+      border-radius: 11px;
+      color: var(--blue);
+      background: rgba(105,217,255,.07);
+      font-size: 11px;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    footer {
+      margin: 34px 0 10px;
+      color: #566173;
+      font-size: 10px;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 14px 10px; }
+      .header { margin-bottom: 34px; }
+      .brand { font-size: 12px; }
+      .brand-icon { width: 34px; height: 34px; }
+      .badge { padding: 8px 9px; font-size: 9px; }
+      h1 { letter-spacing: -1px; }
+      .subtitle { font-size: 13px; }
+      .video-card { border-radius: 15px; }
+      .video-stage, video { min-height: 250px; }
+      video { height: 62vh; }
+      .play-circle { width: 67px; height: 67px; font-size: 24px; }
+      .video-info { padding: 12px 10px; }
+      .info-title { font-size: 12px; }
+      .sound-button { padding: 9px; font-size: 9px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header class="header">
+      <div class="brand">
+        <span class="brand-icon" aria-hidden="true">▶</span>
+        <span>AFTER HOURS</span>
+      </div>
+      <span class="badge">● YOUR NEXT WATCH</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">THE MOMENT IS YOURS</p>
+      <h1>POV: She's <span>That Girl.</span></h1>
+      <p class="subtitle">Good vibes. Main character energy. Press play and catch the vibe.</p>
+    </section>
+
+    <section class="video-card" aria-label="Featured video">
+      <div class="video-stage">
+        <video id="mainVideo" playsinline controls preload="none">
+          Your browser does not support HTML5 video.
+        </video>
+        <div class="overlay" aria-hidden="true"></div>
+        <button class="play-button" id="playButton" type="button" aria-label="Play video">
+          <span class="play-circle" aria-hidden="true">▶</span>
+          <span class="play-label">TAP TO WATCH</span>
+        </button>
+      </div>
+
+      <div class="video-info">
+        <div>
+          <p class="info-title">She Understood the Assignment 💅</p>
+          <p class="info-status" id="videoStatus">Your next favorite vibe starts here.</p>
+        </div>
+        <button class="sound-button" id="soundButton" type="button" aria-pressed="false">🔇 SOUND OFF</button>
+      </div>
+    </section>
+
+    <section class="bottom">
+      <h2>Still scrolling? This one's for you. ✨</h2>
+      <p>Take a little break and enjoy the moment.</p>
+
+    </section>
+
+    <footer>YOUR MOMENT · YOUR VIBE · AFTER HOURS</footer>
+  </main>
+
+  <!-- Native ad script -->
+  <div class="native-ad-slot">
+    <script data-cfasync="false" async src="//aj.rntoughen.com/t1ZryVUSlFOj7eSEi/151257"></script>
+  </div>
+
+  <!-- Histats counter -->
+ <script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,5054750,4,4,130,70,00011111']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+
+    (function () {
+      var hs = document.createElement('script');
+      hs.async = true;
+      hs.src = '//s10.histats.com/js15_as.js';
+      document.getElementsByTagName('script')[0].parentNode.insertBefore(
+        hs, document.getElementsByTagName('script')[0]
+      );
+    })();
+  </script>
+
+  <noscript>
+    <a href="/" target="_blank" rel="noopener noreferrer">
+      <img src="//sstatic1.histats.com/0.gif?4965921&101" alt="" border="0">
+    </a>
+  </noscript>
+
+  <script>
+    (() => {
+      const video = document.getElementById('mainVideo');
+      const playButton = document.getElementById('playButton');
+      const soundButton = document.getElementById('soundButton');
+      const status = document.getElementById('videoStatus');
+      let loaded = false;
+
+      // Apply the photo and video links configured at the top.
+      video.poster = PAGE_CONFIG.photoUrl;
+
+      function loadVideo() {
+        if (loaded) return;
+        const source = document.createElement('source');
+        source.src = PAGE_CONFIG.videoUrl;
+        source.type = 'video/mp4';
+        video.appendChild(source);
+        loaded = true;
+        video.load();
+      }
+
+      async function playVideo() {
+        loadVideo();
+        try {
+          await video.play();
+          playButton.hidden = true;
+          status.textContent = 'Now playing. Enjoy the vibe.';
+        } catch (error) {
+          playButton.hidden = false;
+          status.textContent = 'Could not play video. Check the video link.';
+        }
+      }
+
+      playButton.addEventListener('click', playVideo);
+
+      soundButton.addEventListener('click', () => {
+        video.muted = !video.muted;
+        soundButton.textContent = video.muted ? '🔇 SOUND OFF' : '🔊 SOUND ON';
+        soundButton.setAttribute('aria-pressed', String(!video.muted));
+      });
+
+      video.addEventListener('play', () => {
+        playButton.hidden = true;
+        status.textContent = 'Now playing. Enjoy the vibe.';
+      });
+
+      video.addEventListener('pause', () => {
+        if (!video.ended) {
+          playButton.hidden = false;
+          status.textContent = 'Paused. Press play to continue.';
+        }
+      });
+
+      video.addEventListener('ended', () => {
+        playButton.hidden = false;
+        status.textContent = 'Watch again whenever you like.';
+      });
+
+      video.addEventListener('error', () => {
+        playButton.hidden = false;
+        status.textContent = 'Video unavailable. Check the video URL.';
+      });
+    })();
+  </script>
+</body>
+</html>
